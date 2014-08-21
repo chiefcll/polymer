@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Web Components Example</title>
+</head>
+<body>
+
+<template id="theo-template">
+    <style>
+        h3 {
+            color: blue;
+        }
+    </style>
+    <img src="" alt="random theo image" width="500">
+    <h3>
+        Theo Rocks
+    </h3>
+</template>
+
+<script>
+    var template = document.querySelector('#theo-template');
+    template.content.querySelector('img').src = 'https://scontent-a-lga.xx.fbcdn.net/hphotos-xfa1/t31.0-8/10014027_10204014437546065_7489903814092209448_o.jpg';
+    document.body.appendChild(document.importNode(template.content, true));
+</script>
+
+</body>
+</html>
