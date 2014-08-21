@@ -5,14 +5,25 @@
     <title>Imports</title>
 
     <link rel="import" href="template.html">
+
+    <style>
+        h3 {
+            color: red;
+        }
+    </style>
+
 </head>
 <body>
+
+<h3>Fil Rocks!</h3>
+
 <script>
     var link = document.querySelector('link[rel=import]');
     var template = link.import.querySelector('#theo-template');
     template.content.querySelector('img').src = 'https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10003793_10204261198194927_9201364721452776599_o.jpg';
     document.body.appendChild(document.importNode(template.content, true));
 </script>
+
 
 </body>
 </html>

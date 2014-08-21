@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Shadow Dom!</title>
+
+    <link rel="import" href="template.html">
+    <style>
+        h3 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Fil Rocks!</h3>
+
+<div class="theo-rocks"></div>
+
+<script>
+    var link = document.querySelector('link[rel=import]');
+    var template = link.import.querySelector('#theo-template');
+    template.content.querySelector('img').src = 'https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/1920957_10204061024830718_3028116528461446834_o.jpg';
+    var host = document.querySelector('.theo-rocks');
+    var root = host.createShadowRoot();
+    root.appendChild(document.importNode(template.content, true));
+</script>
+
+</body>
+</html>
