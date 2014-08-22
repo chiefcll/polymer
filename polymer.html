@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Polymer</title>
+    <script src="./platform/platform.js"></script>
+    <link rel="import" href="./polymer/polymer.html">
+
+    <polymer-element name="theo-rocks" noscript attributes="src">
+        <template>
+            <style>
+                h3 {
+                    color: blue;
+                }
+            </style>
+            <img src="{{src}}" alt="random theo image" width="500">
+            <h3>
+                <content></content>
+            </h3>
+        </template>
+    </polymer-element>
+</head>
+<body>
+
+<theo-rocks src="https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/1920957_10204061024830718_3028116528461446834_o.jpg">
+    Theo is a pirate!
+</theo-rocks>
+
+<theo-rocks src="https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/10336662_10204283794319816_8173203243731579395_n.jpg">
+    Theo Stinks
+</theo-rocks>
+
+</body>
+</html>

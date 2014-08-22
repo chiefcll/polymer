@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Polymer</title>
+    <script src="./platform/platform.js"></script>
+    <link rel="import" href="./polymer/polymer.html">
+    <link rel="import" href="./paper-shadow/paper-shadow.html">
+
+    <polymer-element name="theo-rocks" on-click="{{onClick}}">
+        <template>
+            <style>
+
+
+                h3 {
+                    clear: left;
+                    color: blue;
+                    font-family: Helvetica;
+                    padding-top: 15px;
+                }
+
+                img {
+                    float: left;
+                }
+
+                .wrapper {
+                    width: 550px;
+                    display: inline-block;
+                    margin: 40px;
+                }
+
+            </style>
+            <div class="wrapper">
+                <div style="float: left;">
+                    <paper-shadow z="3"></paper-shadow>
+                    <img src="{{theo.src}}" alt="random theo image" width="500">
+                </div>
+                <h3>
+                    {{theo.title}}
+                </h3>
+            </div>
+        </template>
+    </polymer-element>
+
+    <script>
+        var theo = [
+            {
+                src: 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xap1/t31.0-8/p480x480/10382419_10204680788884432_2490947269763727666_o.jpg',
+                title: 'Theo with Dad'
+            },
+            {
+                src: 'https://scontent-a-lga.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/10492359_595592128548_4250240489615448522_n.jpg?oh=d98bfcd74903bebe0f75bd074fe48967&oe=5471B83E',
+                title: 'Sad face'
+            },
+            {
+                src: 'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/10531220_599388500588_7967674726713008460_o.jpg',
+                title: 'mmmm Kitty'
+            },
+            {
+                src: 'https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/10455006_595099376028_2644344101509944716_o.jpg',
+                title: 'ahhhhhhh'
+            }
+        ];
+
+        Polymer('theo-rocks', {
+            ready: function() {
+                this.theo = theo[0];
+            },
+
+            onClick: function() {
+                this.theo = theo[Math.round(Math.random() * (theo.length - 1))];
+            }
+        });
+    </script>
+</head>
+<body>
+
+<theo-rocks></theo-rocks>
+</body>
+</html>
