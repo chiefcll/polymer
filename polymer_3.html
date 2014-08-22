@@ -63,12 +63,18 @@
         ];
 
         Polymer('theo-rocks', {
+
             ready: function() {
-                this.theo = theo[0];
+                this.index = 0;
+                this.theo = theo[this.index];
             },
 
             onClick: function() {
-                this.theo = theo[Math.round(Math.random() * (theo.length - 1))];
+                this.index++;
+                if(this.index > theo.length - 1) {
+                    this.index = 0;
+                }
+                this.theo = theo[this.index];
             }
         });
     </script>
